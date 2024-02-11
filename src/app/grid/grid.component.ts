@@ -1,21 +1,24 @@
 import { Component } from '@angular/core';
-import { NgForOf } from '@angular/common';
-import { Grid } from '@syncfusion/ej2-angular-grids';
-   @Component({
-     selector: 'app-grid',
-     templateUrl: './grid.component.html',
-     styleUrls: ['./grid.component.css']
-   })
-   export class GridComponent {
-     gridData: { name: string }[] = [];
 
-     constructor() {}
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  rows: string[][] = [];
 
-     addRow() {
-       this.gridData.push({ name: '' });
-     }
+  addRow() {
+    this.rows.push(['', '', '', '', '']);
+  }
 
-     deleteRow(index: number) {
-       this.gridData.splice(index, 1);
-     }
-   }
+  deleteRow() {
+    if (this.rows.length > 0) {
+      this.rows.pop();
+    }
+  }
+
+  updateCell(rowIndex: number, colIndex: number, value: string) {
+    this.rows[rowIndex][colIndex] = value;
+  }
+}

@@ -1,19 +1,20 @@
 <div class="grid-container">
-  <table class="grid-table">
-    <thead>
-      <tr>
-        <th>Club Name</th>
-        <th>No of Players</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of gridData; let i = index">
-        <td>{{ item.name }}</td>
-        <td>{{ i + 1 }}</td>
-        <td><button class="delete-button" (click)="deleteRow(i)">Delete</button></td>
-      </tr>
-    </tbody>
+  <table>
+      <thead>
+          <tr>
+              <th>Club_Name</th>
+              <th>Team_Members</th>
+              <th>Participation_count</th>
+              <th>Winning_Count</th>
+              <th>Member</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let row of rows; let rowIndex = index">
+              <td *ngFor="let cell of row; let colIndex = index" contentEditable="true" (input)="updateCell(rowIndex, colIndex, $event.target.innerText)">{{ cell }}</td>
+          </tr>
+      </tbody>
   </table>
-  <button class="add-button" (click)="addRow()">Add Row</button>
 </div>
+<button (click)="addRow()">Add Row</button>
+<button (click)="deleteRow()">Delete Row</button>

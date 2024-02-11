@@ -1,31 +1,32 @@
 .grid-container {
-    background-color: #000;
-    color: #fff;
-    padding: 20px;
-    background-image: url("https://i.pinimg.com/736x/dc/50/be/dc50be88ee6a09345d6d73f567a79527.jpg");
-  }
+  margin-top: 20px;
+  background-color: black;
+  background-image: url("https://i.pinimg.com/736x/dc/50/be/dc50be88ee6a09345d6d73f567a79527.jpg");
+}
 
-  .grid-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
 
-  .grid-table th,
-  .grid-table td {
-    padding: 10px;
-    border: 1px solid #fff;
-  }
+table, th, td {
+  border: 1px solid #fff;
+}
 
-  .add-button,
-  .delete-button {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-  }
+th, td {
+  padding: 10px;
+  color: #fff;
+}
 
-  .add-button:hover,
-  .delete-button:hover {
-    background-color: #555;
-  }
+button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
